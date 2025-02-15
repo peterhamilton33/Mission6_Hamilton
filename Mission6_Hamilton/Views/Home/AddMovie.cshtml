@@ -1,0 +1,67 @@
+@model Mission6_Hamilton.Models.Movie
+
+@{
+    ViewBag.Title = "Add a New Movie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add a New Movie</h2>
+
+<form asp-action="Create" asp-controller="Movies" method="post">
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Category" class="form-label"></label>
+        <input asp-for="Category" class="form-control" />
+        <span asp-validation-for="Category" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Year" class="form-label"></label>
+        <input asp-for="Year" class="form-control" />
+        <span asp-validation-for="Year" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Director" class="form-label"></label>
+        <input asp-for="Director" class="form-control" />
+        <span asp-validation-for="Director" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Rating" class="form-label">Rating</label>
+        <select asp-for="Rating" class="form-select" asp-items="@(new SelectList(new[] { "G", "PG", "PG-13", "R" }))">
+            <option value="">-- Select Rating --</option>
+        </select>
+        <span asp-validation-for="Rating" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <div class="form-check">
+            <input asp-for="Edited" class="form-check-input" />
+            <label asp-for="Edited" class="form-check-label"></label>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="LentTo" class="form-label"></label>
+        <input asp-for="LentTo" class="form-control" />
+        <span asp-validation-for="LentTo" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Notes" class="form-label"></label>
+        <input asp-for="Notes" class="form-control" />
+        <span asp-validation-for="Notes" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create Movie</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

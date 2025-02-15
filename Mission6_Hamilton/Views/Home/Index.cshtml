@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "The Joel Hilton Film Collection";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container my-5">
+    <!-- Title row -->
+    <div class="row mb-4">
+        <div class="col text-center">
+            <h1 class="display-4">The Joel Hilton Film Collection</h1>
+            <hr class="my-4" />
+        </div>
+    </div>
+
+    <!-- Intro row -->
+    <div class="row mb-4 align-items-center">
+        <!-- Text column -->
+        <div class="col-md-6">
+            <p class="lead">
+                Welcome to Joel Hilton's Film Collection! Here you'll find an ever-expanding list of
+                movies that Joel deems worthy of his personal library. Thanks for stopping by, and
+                feel free to browse the site to learn more about Joel and his taste in film.
+            </p>
+            <p>
+                If you'd like to add a film to his collection or just want to see what's new,
+                check out the <a asp-controller="Home" asp-action="AddMovie">Add Movie</a> page 
+                or head over to our <a asp-controller="Home" asp-action="GetToKnowJoel">Get to Know Joel</a> 
+                section to learn about Joel's background and interests.
+            </p>
+        </div>
+
+        <!-- Image column -->
+        <div class="col-md-6 text-center">
+            <img src="~/img/JoelHiltonHeadshot.jpg"
+                 alt="Joel Hilton"
+                 class="img-fluid rounded shadow"
+                 style="max-width: 400px;" />
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col">
+            <p>
+                Joel is a film enthusiast and part-time critic who loves to share his passion for cinema.
+                Through this site, he hopes to help others discover new films, appreciate old classics,
+                and embrace the magic of storytelling on screen. Sit back, relax, and explore the 
+                wonderful world of film—Joel Hilton style!
+            </p>
+        </div>
+    </div>
+</div>

@@ -89,17 +89,26 @@ namespace Mission6_Hamilton.Controllers
         }
 
         [HttpPost]
-        public IActionResult DeleteMovie([FromBody] int id)
+        [Route("Home/DeleteMovie/{id}")]
+        public IActionResult DeleteMovie(int id)
         {
             var movie = _context.Movies.FirstOrDefault(m => m.MovieId == id);
-            if (movie != null)
+            if (movie == null)
+            {
+                return Json(new { success = false, message = "Movie not found." });
+            }
+
+            try
             {
                 _context.Movies.Remove(movie);
                 _context.SaveChanges();
-                return Ok(); // Return a 200 OK status if successful
+                return Json(new { success = true, message = "Movie successfully deleted." });
             }
-
-            return NotFound(); // Return a 404 if the movie is not found
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = $"Error deleting movie: {ex.Message}" });
+            }
         }
+
     }
 }

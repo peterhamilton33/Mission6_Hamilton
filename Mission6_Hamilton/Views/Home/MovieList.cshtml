@@ -20,11 +20,12 @@
             <td>@movie.Director</td>
             <td>@movie.Rating</td>
             <td>
-                <a asp-action="AddMovie" asp-route-id="@movie.MovieId" class="btn btn-warning">Edit</a>
-                <button onclick="confirmDelete(@movie.MovieId)" class="btn btn-danger">Delete</button>
+                <a asp-action="EditMovie" asp-route-id="@movie.MovieId" class="btn btn-warning">Edit</a>
+                <button class="btn btn-danger" onclick="confirmDelete(@movie.MovieId)">Delete</button>
             </td>
         </tr>
     }
+
     </tbody>
 </table>
 

@@ -8,34 +8,30 @@ namespace Mission6_Hamilton.Models
         [Key]
         public int MovieId { get; set; }
 
-        [Required]
+        [ForeignKey("Category")]
         public int CategoryId { get; set; }
 
         [Required]
-        public string Title { get; set; }
+        public string Title { get; set; } = "Unknown Title";
 
         [Required]
-        [Range(1888, int.MaxValue, ErrorMessage = "Year must be 1888 or later.")]
+        [Range(1888, int.MaxValue, ErrorMessage = "Year must be greater than 1888.")]
         public int Year { get; set; }
 
         [Required]
-        public string Director { get; set; }
+        public string Director { get; set; } = "Unknown Director";
 
         [Required]
-        public string Rating { get; set; }
+        public string Rating { get; set; } = "Not Rated";
 
-        [Required]
         public bool Edited { get; set; }
 
-        public string LentTo { get; set; }
+        public string LentTo { get; set; } = "N/A";
 
-        [Required]
         public bool CopiedToPlex { get; set; }
 
-        [MaxLength(25)]
-        public string Notes { get; set; }
+        public string Notes { get; set; } = "";
 
-        // Navigation property
         public Category Category { get; set; }
     }
 }

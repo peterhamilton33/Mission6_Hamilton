@@ -11,12 +11,8 @@ namespace Mission6_Hamilton.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-
-            modelBuilder.Entity<Movie>()
-                .HasOne(m => m.Category)
-                .WithMany(c => c.Movies)
-                .HasForeignKey(m => m.CategoryId);
+            modelBuilder.Entity<Movie>().ToTable("Movies");
+            modelBuilder.Entity<Category>().ToTable("Categories");
         }
     }
 }

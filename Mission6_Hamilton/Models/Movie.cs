@@ -8,9 +8,8 @@ namespace Mission6_Hamilton.Models
         [Key]
         public int MovieId { get; set; }
 
-        [ForeignKey("Category")]
+        [Required]
         public int CategoryId { get; set; }
-        public Category Category { get; set; }
 
         [Required]
         public string Title { get; set; }
@@ -35,5 +34,8 @@ namespace Mission6_Hamilton.Models
 
         [MaxLength(25)]
         public string Notes { get; set; }
+
+        // Navigation property
+        public Category Category { get; set; }
     }
 }

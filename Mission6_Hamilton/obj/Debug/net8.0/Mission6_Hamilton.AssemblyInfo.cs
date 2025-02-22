@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mission6_Hamilton")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a8e73db32b07f9a28dba50f8543901dd7ca12a74")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d39d057cde1d1562c8c1183bdf8f0820f670030e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mission6_Hamilton")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mission6_Hamilton")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

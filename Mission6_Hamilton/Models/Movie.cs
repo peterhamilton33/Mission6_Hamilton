@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Mission6_Hamilton.Models
 {
@@ -7,10 +8,15 @@ namespace Mission6_Hamilton.Models
         [Key]
         public int MovieId { get; set; }
 
+        [ForeignKey("Category")]
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
+
         [Required]
         public string Title { get; set; }
 
         [Required]
+        [Range(1888, int.MaxValue, ErrorMessage = "Year must be 1888 or later.")]
         public int Year { get; set; }
 
         [Required]
@@ -20,17 +26,14 @@ namespace Mission6_Hamilton.Models
         public string Rating { get; set; }
 
         [Required]
-        public string Category { get; set; } // Add this line to match the database schema
-
-        [Required]
         public bool Edited { get; set; }
 
         public string LentTo { get; set; }
 
-        [MaxLength(25)]
-        public string Notes { get; set; }
-
         [Required]
         public bool CopiedToPlex { get; set; }
+
+        [MaxLength(25)]
+        public string Notes { get; set; }
     }
 }

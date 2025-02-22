@@ -8,26 +8,29 @@ namespace Mission6_Hamilton.Models
         public int MovieId { get; set; }
 
         [Required]
-        public string Title { get; set; } = "";
-
-        [Required]
-        public string Category { get; set; } = "";
+        public string Title { get; set; }
 
         [Required]
         public int Year { get; set; }
 
         [Required]
-        public string Director { get; set; } = "";
+        public string Director { get; set; }
 
         [Required]
-        public string Rating { get; set; } = ""; 
-        // e.g. G, PG, PG-13, R
+        public string Rating { get; set; }
 
-        public bool Edited { get; set; }  // optional
+        [Required]
+        public string Category { get; set; } // Add this line to match the database schema
 
-        public string? LentTo { get; set; }  // optional
+        [Required]
+        public bool Edited { get; set; }
 
-        [StringLength(25, ErrorMessage = "Notes cannot exceed 25 characters.")]
-        public string? Notes { get; set; }  // optional
+        public string LentTo { get; set; }
+
+        [MaxLength(25)]
+        public string Notes { get; set; }
+
+        [Required]
+        public bool CopiedToPlex { get; set; }
     }
 }

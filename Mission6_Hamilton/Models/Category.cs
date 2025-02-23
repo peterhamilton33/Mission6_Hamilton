@@ -7,11 +7,12 @@ namespace Mission6_Hamilton.Models
     {
         [Key]
         public int CategoryId { get; set; }
-
         [Required]
         public string CategoryName { get; set; }
 
         // Navigation property
         public List<Movie> Movies { get; set; }
+        
+
     }
 }

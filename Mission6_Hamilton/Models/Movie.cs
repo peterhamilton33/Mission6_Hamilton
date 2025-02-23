@@ -5,33 +5,37 @@ namespace Mission6_Hamilton.Models
 {
     public class Movie
     {
+  
+
         [Key]
-        public int MovieId { get; set; }
+        public int MovieId { get; set; }  // Primary Key
 
         [ForeignKey("Category")]
-        public int CategoryId { get; set; }
+        public int CategoryId { get; set; }  // Foreign Key from Categories table
+        
 
         [Required]
-        public string Title { get; set; } = "Unknown Title";
+        public string Title { get; set; }  // Movie title
 
         [Required]
-        [Range(1888, int.MaxValue, ErrorMessage = "Year must be greater than 1888.")]
-        public int Year { get; set; }
+        [Range(1888, 2100, ErrorMessage = "Year must be between 1888 and 2100")]
+        public int Year { get; set; }  // Year of release
 
         [Required]
-        public string Director { get; set; } = "Unknown Director";
+        public string Director { get; set; }  // Director's name
 
         [Required]
-        public string Rating { get; set; } = "Not Rated";
+        public string Rating { get; set; }  // Movie rating
 
-        public bool Edited { get; set; }
+        public bool Edited { get; set; }  // Has the movie been edited?
 
-        public string LentTo { get; set; } = "N/A";
+        public string? LentTo { get; set; }  // Who is the movie lent to?
 
-        public bool CopiedToPlex { get; set; }
+        public bool CopiedToPlex { get; set; }  // Copied to Plex server?
 
-        public string Notes { get; set; } = "";
+        public string? Notes { get; set; }  // Any additional notes
 
-        public Category Category { get; set; }
+        // Navigation property for Category (joining with Categories table)
+        public Category? Category { get; set; }
     }
 }
